@@ -11,6 +11,7 @@ import java.util.Random;
  */
 public class Numeros {
     int[][] nums;
+
     
     public Numeros() {        
     nums = new int [3][3];
@@ -29,6 +30,8 @@ public class Numeros {
             }
             System.out.println();
             }
+
+        
     }
     
     

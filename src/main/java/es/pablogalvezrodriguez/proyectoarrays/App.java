@@ -23,7 +23,10 @@ public class App extends Application {
         
         Numeros numeros = new Numeros();
         
+        Sumas sumas = new Sumas(numeros);
+        
         numeros.mostrarConsola();
+        sumas.mostrarConsola();
         
     }
 
