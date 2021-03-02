@@ -13,15 +13,32 @@ public class Numeros {
     int[][] nums;
 
     
+    /*
     public Numeros() {        
     nums = new int [3][3];
-    //Random random = new Random();
     for (int y=0; y<3; y++){
             for (int x=0; x<3; x++){
-            nums [x][y] = getNumAleatorio(1,9);
+            nums[x][y] = getNumAleatorio(1,9);
             }
         }
     }
+  
+    */
+    
+
+    public Numeros() {        
+    nums = new int [3][3];
+    int posX;
+    int posY;
+    for (int n=1; n<10; n++){
+            do {
+                posX = getNumAleatorio(0,2);
+                posY = getNumAleatorio(0,2);
+            } while (nums[posX][posY] != 0);
+            nums[posX][posY] = n;
+        }
+    }
+    
     
     public void mostrarConsola() {
         for (int y=0; y<3; y++){
@@ -31,7 +48,7 @@ public class Numeros {
             System.out.println();
             }
 
-        
+
     }
     
     

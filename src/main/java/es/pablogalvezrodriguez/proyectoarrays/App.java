@@ -25,8 +25,12 @@ public class App extends Application {
         
         Sumas sumas = new Sumas(numeros);
         
+        SujikoView sujikoView = new SujikoView();
+        
         numeros.mostrarConsola();
         sumas.mostrarConsola();
+        
+        
         
     }
 
