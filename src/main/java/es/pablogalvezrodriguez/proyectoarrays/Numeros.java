@@ -59,4 +59,13 @@ public class Numeros {
     }
     
     
+    public int getNumPos (int posx, int posy) {
+        try {
+            return nums[posx][posy];
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return -1;
+        }
+    }
+    
 }
