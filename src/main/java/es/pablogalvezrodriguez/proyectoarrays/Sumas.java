@@ -42,6 +42,13 @@ public class Sumas {
         return num;
     }
     
-    
+        public int getNumPos (int posx, int posy) {
+        try {
+            return sumas[posx][posy];
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return -1;
+        }
+    }
     
 }

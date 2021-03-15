@@ -2,10 +2,8 @@ package es.pablogalvezrodriguez.proyectoarrays;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 //sujiko
@@ -26,12 +24,18 @@ public class App extends Application {
         
         Sumas sumas = new Sumas(numeros);
         
-        SujikoView sujikoView = new SujikoView(numeros);
+        Ocultos ocultos = new Ocultos(numeros);
+        
+        SujikoView sujikoView = new SujikoView(ocultos, sumas);
+        
         
         paneRoot.setCenter(sujikoView);
         
+
+        
         numeros.mostrarConsola();
         sumas.mostrarConsola();
+        ocultos.mostrarConsola();
         
         
         
