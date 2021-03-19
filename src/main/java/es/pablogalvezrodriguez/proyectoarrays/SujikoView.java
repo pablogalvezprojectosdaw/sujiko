@@ -5,8 +5,10 @@
  */
 package es.pablogalvezrodriguez.proyectoarrays;
 
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -24,9 +26,14 @@ public class SujikoView extends Group {
     Ocultos ocultos;
     GridPane sumasView = new GridPane();
     Sumas sumas;
+    Label [][] labelArray = new Label[3][3];
+    String strNum1;
+    Numeros nums;
+    int colClic;
+    int filClic;
     final int TAM_X = 100;
     final int TAM_Y = 100;
-    public SujikoView (Ocultos ocultos, Sumas sumas){
+    public SujikoView (Ocultos ocultos, Sumas sumas, Numeros numeros, CompAcierto compAcierto){
         
         this.ocultos = ocultos;
         sujikoView.setMaxWidth(TAM_X);
@@ -44,17 +51,29 @@ public class SujikoView extends Group {
                     label.setPrefHeight(TAM_Y);
                     label.setAlignment(Pos.CENTER);
                     label.setFont(new Font("Impact", 30));
+                    labelArray [x][y] = label;
                     sujikoView.add(label, x, y);
                 } else {
                     Rectangle r = new Rectangle();
                     r.setWidth(TAM_X);
                     r.setHeight(TAM_Y);
                     r.setFill(Color.RED);
-                    sujikoView.add(r, x, y);
+                    String strNum = String.valueOf(num);
+                    Label nonum = new Label(strNum);
+                    nonum.setMinWidth(TAM_X);
+                    nonum.setMinHeight(TAM_Y);
+                    nonum.setAlignment(Pos.CENTER);
+                    nonum.setFont(new Font("Impact", 30));
+                    labelArray [x][y] = nonum;
+                    sujikoView.add(nonum, x, y);
+                    
+                    
                 }
             }
         }
 
+        
+        
         String strSuma1 = String.valueOf(sumas.sumas [0][0]);
         Label suma1 = new Label(strSuma1);
         suma1.setFont(new Font("Impact", 30));
@@ -116,23 +135,159 @@ public class SujikoView extends Group {
         //sumasView.getChildren().add(suma2);
         
         
+        
+        Button button1 = new Button("1");
+        button1.setTranslateX(50);
+        button1.setTranslateY(410);
+        button1.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("1");
+            ocultos.arrayOcultos[colClic][filClic] = 1;
+            compAcierto.tableroCompleto(ocultos);
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+            
+        });
+        
+        Button button2 = new Button("2");
+        button2.setTranslateX(100);
+        button2.setTranslateY(410);
+        button2.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("2");
+            ocultos.arrayOcultos[colClic][filClic] = 2;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button3 = new Button("3");
+        button3.setTranslateX(150);
+        button3.setTranslateY(410);
+        button3.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("3");
+            ocultos.arrayOcultos[colClic][filClic] = 3;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button4 = new Button("4");
+        button4.setTranslateX(200);
+        button4.setTranslateY(410);
+        button4.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("4");
+            ocultos.arrayOcultos[colClic][filClic] = 4;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button5 = new Button("5");
+        button5.setTranslateX(250);
+        button5.setTranslateY(410);
+        button5.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("5");
+            ocultos.arrayOcultos[colClic][filClic] = 5;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button6 = new Button("6");
+        button6.setTranslateX(300);
+        button6.setTranslateY(410);
+        button6.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("6");
+            ocultos.arrayOcultos[colClic][filClic] = 6;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button7 = new Button("7");
+        button7.setTranslateX(350);
+        button7.setTranslateY(410);
+        button7.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("7");
+            ocultos.arrayOcultos[colClic][filClic] = 7;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button8 = new Button("8");
+        button8.setTranslateX(400);
+        button8.setTranslateY(410);
+        button8.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("8");
+            ocultos.arrayOcultos[colClic][filClic] = 8;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+        Button button9 = new Button("9");
+        button9.setTranslateX(450);
+        button9.setTranslateY(410);
+        button9.setOnAction((ActionEvent e) -> {
+            labelArray[colClic][filClic].setText("9");
+            ocultos.arrayOcultos[colClic][filClic] = 9;
+            if (compAcierto.tableroCompleto(ocultos) == false) {
+                System.out.println("el tablero no está completo");
+            } else {
+                compAcierto.compArrays(numeros, ocultos);
+            }
+        });
+        
+       
+       
 
         this.getChildren().add(sujikoView);
         this.getChildren().add(sumasView);
+        
         this.getChildren().add(suma1);
         this.getChildren().add(suma2);
         this.getChildren().add(suma3);
         this.getChildren().add(suma4);
+        
+        
+        this.getChildren().add(button1);
+        this.getChildren().add(button2);
+        this.getChildren().add(button3);
+        this.getChildren().add(button4);
+        this.getChildren().add(button5);
+        this.getChildren().add(button6);
+        this.getChildren().add(button7);
+        this.getChildren().add(button8);
+        this.getChildren().add(button9);
         this.mouseController();
+        
     }
         private void mouseController() {
         this.setOnMouseClicked((MouseEvent mouseEvent) -> {
             System.out.println("X: " + mouseEvent.getX() + ", Y: "+ mouseEvent.getY() );
-            int colClic = (int)(mouseEvent.getX() / TAM_X);
-            int filClic = (int)(mouseEvent.getY() / TAM_Y);
+            colClic = (int)(mouseEvent.getX() / TAM_X);
+            filClic = (int)(mouseEvent.getY() / TAM_Y);
             System.out.println("Col: " + colClic + ", Fil: " + filClic);
             int num = ocultos.getNumPos(colClic, filClic);
             System.out.println("Número: " + num);
+            
         });
         }
     
