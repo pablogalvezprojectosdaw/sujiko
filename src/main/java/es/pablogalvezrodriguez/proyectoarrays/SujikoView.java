@@ -22,19 +22,20 @@ import javafx.scene.text.Font;
  * @author 1DAW03
  */
 public class SujikoView extends Group {
-    GridPane sujikoView = new GridPane();
+    GridPane sujikoView = new GridPane(); //gridpane principal
     Ocultos ocultos;
-    GridPane sumasView = new GridPane();
+    GridPane sumasView = new GridPane(); //gridpane de las sumas
     Sumas sumas;
-    Label [][] labelArray = new Label[3][3];
+    Label [][] labelArray = new Label[3][3]; //array de labels, un array que se podrá cambiar en el juego a base de "settext"
     String strNum1;
     Numeros nums;
-    int colClic;
-    int filClic;
+    int colClic; //clic de columna
+    int filClic; //clic de fila
     final int TAM_X = 100;
     final int TAM_Y = 100;
     public SujikoView (Ocultos ocultos, Sumas sumas, Numeros numeros, CompAcierto compAcierto){
         
+        //montaje del array
         this.ocultos = ocultos;
         sujikoView.setMaxWidth(TAM_X);
         sujikoView.setMaxHeight(TAM_Y);
@@ -73,7 +74,7 @@ public class SujikoView extends Group {
         }
 
         
-        
+        //montage del array de sumas
         String strSuma1 = String.valueOf(sumas.sumas [0][0]);
         Label suma1 = new Label(strSuma1);
         suma1.setFont(new Font("Impact", 30));
@@ -134,7 +135,7 @@ public class SujikoView extends Group {
         
         //sumasView.getChildren().add(suma2);
         
-        
+        //montaje de los botones, cada uno puede cambiar el digito del gridpane principal, tanto visual como logicamente
         
         Button button1 = new Button("1");
         button1.setTranslateX(50);
@@ -255,9 +256,16 @@ public class SujikoView extends Group {
             }
         });
         
-       
-       
+        
+        
+       Button reinicio = new Button("Reiniciar");
+       reinicio.setTranslateX(400);
+       reinicio.setTranslateY(250);
+       reinicio.setOnAction((ActionEvent e) -> {
+          
+       });
 
+       
         this.getChildren().add(sujikoView);
         this.getChildren().add(sumasView);
         
@@ -276,9 +284,13 @@ public class SujikoView extends Group {
         this.getChildren().add(button7);
         this.getChildren().add(button8);
         this.getChildren().add(button9);
+        this.getChildren().add(reinicio);
         this.mouseController();
         
     }
+    
+    
+    //Control del mouse
         private void mouseController() {
         this.setOnMouseClicked((MouseEvent mouseEvent) -> {
             System.out.println("X: " + mouseEvent.getX() + ", Y: "+ mouseEvent.getY() );

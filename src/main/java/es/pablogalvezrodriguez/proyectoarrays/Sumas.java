@@ -14,6 +14,7 @@ import java.util.Random;
 public class Sumas {
     int [][] sumas;
     
+    //array sumas, estos son los cuatro numeros centrales, que suman los numeros que hay que adivinar
     public Sumas(Numeros numeros) {        
         sumas = new int [2][2];
         //Random random = new Random();

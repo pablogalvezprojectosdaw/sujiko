@@ -25,7 +25,7 @@ public class Numeros {
   
     */
     
-
+    // array principal, aqui se crean los 9 numeros que se van a usar
     public Numeros() {        
     nums = new int [3][3];
     int posX;

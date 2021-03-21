@@ -16,7 +16,7 @@ public class CompAcierto {
     }
     
 
-    
+    //esta funcion detecta si el tablero todavia tiene ceros
     public boolean tableroCompleto (Ocultos ocultos) {
         for (int y=0; y<3; y++) {
             for (int x=0; x<3; x++) {
@@ -29,13 +29,15 @@ public class CompAcierto {
         return true;
     }
 
+    
+    //esta funcion comprueba si el array modificado coincide con la solucion de los numeros
     public void compArrays (Numeros numeros, Ocultos ocultos) {
         for (int y=0; y<3; y++) {
             for (int x=0; x<3; x++) {
                 int compOcultos = ocultos.getNumPos (x, y);
                 int compNumeros = numeros.getNumPos (x, y);
                     if (compOcultos == compNumeros) {
-                        System.out.println("wow lo has conseguido");
+                        System.out.println("Conseguido");
                     }
                 }
             }

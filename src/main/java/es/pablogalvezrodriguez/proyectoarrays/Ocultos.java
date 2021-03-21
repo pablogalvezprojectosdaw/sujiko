@@ -3,6 +3,8 @@ package es.pablogalvezrodriguez.proyectoarrays;
 
 public class Ocultos {
     int [][] arrayOcultos;
+    
+    //array ocultos, de aqui solo se escogen los cuatro números que no hay que cambiar
     public Ocultos (Numeros numeros) {
         arrayOcultos = new int [3][3];
         arrayOcultos [0][0] = numeros.nums[0][0];
